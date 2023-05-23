@@ -3,8 +3,8 @@ package com.yumtaufikhidayat.pitjarusx.di
 import android.content.Context
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import com.yumtaufikhidayat.pitjarusx.BuildConfig
 import com.yumtaufikhidayat.pitjarusx.data.remote.ApiService
-import com.yumtaufikhidayat.pitjarusx.utils.Common
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -19,7 +19,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.io.File
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
-import com.yumtaufikhidayat.pitjarusx.BuildConfig
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -32,7 +31,7 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideBaseUrl() = Common.BASE_URL
+    fun provideBaseUrl() = BuildConfig.BASE_URL
 
     @Provides
     @Singleton

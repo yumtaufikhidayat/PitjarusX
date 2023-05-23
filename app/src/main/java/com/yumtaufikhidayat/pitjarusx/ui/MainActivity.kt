@@ -3,7 +3,9 @@ package com.yumtaufikhidayat.pitjarusx.ui
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.yumtaufikhidayat.pitjarusx.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }

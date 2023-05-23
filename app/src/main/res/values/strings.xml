@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">PitjarusX</string>
+    <string name="txt_login">Login</string>
+    <string name="txt_login_desc">Silakan login untuk masuk aplikasi</string>
+    <string name="txt_login_failed_email">Login gagal. Email yang digunakan salah/tidak terdaftar. Silakan coba lagi.</string>
+    <string name="txt_login_failed_password">Login gagal. Password yang digunakan salah/tidak terdaftar. Silakan coba lagi.</string>
+    <string name="txt_login_success">Login berhasil. Silakan login untuk menikmati fitur-fitur JMO.</string>
+    <string name="txt_username">Username</string>
+    <string name="txt_username_ex">yourusernamehere</string>
+    <string name="txt_password">Password</string>
+    <string name="txt_show_password">Show password</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

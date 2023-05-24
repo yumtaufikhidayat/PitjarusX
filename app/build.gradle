@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android'
     id 'kotlin-parcelize'
     id 'kotlin-kapt'
     id 'androidx.navigation.safeargs'
@@ -77,8 +78,6 @@ dependencies {
     def roomVersion = '2.5.1'
     implementation "androidx.room:room-runtime:$roomVersion"
     implementation "androidx.room:room-ktx:$roomVersion"
-    testImplementation "androidx.room:room-testing:$roomVersion"
-    kapt "androidx.room:room-compiler:$roomVersion"
 
     // Coroutine
     def coroutineCoreVersion = '1.6.2'

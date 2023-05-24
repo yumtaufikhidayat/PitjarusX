@@ -44,19 +44,27 @@ class LoginFragment : Fragment() {
                 val username = etUsername.text.toString().trim()
                 val password = etPassword.text.toString().trim()
 
-                loginViewModel.login(username, password).observe(viewLifecycleOwner) {
-                    if (it != null) {
-                        when (it) {
-                            is NetworkResult.Loading -> showLoading(true)
-                            is NetworkResult.Success -> {
-                                showLoading(false)
-                                showToast(it.data.message)
+                loginViewModel.apply {
+                    loginRemote(username, password).observe(viewLifecycleOwner) {
+                        if (it != null) {
+                            when (it) {
+                                is NetworkResult.Loading -> showLoading(true)
+                                is NetworkResult.Success -> {
+                                    showLoading(false)
+                                    // save data to local after successfully login
+//                                    loginLocal(username, password)
+                                    showToast(it.data.message)
+                                }
+
+                                is NetworkResult.Error -> {
+                                    showLoading(false)
+                                    showToast(it.error)
+                                }
+
+                                is NetworkResult.Unauthorized, is NetworkResult.ServerError -> showToast(
+                                    it.toString()
+                                )
                             }
-                            is NetworkResult.Error -> {
-                                showLoading(false)
-                                showToast(it.error)
-                            }
-                            is NetworkResult.Unauthorized, is NetworkResult.ServerError -> showToast(it.toString())
                         }
                     }
                 }

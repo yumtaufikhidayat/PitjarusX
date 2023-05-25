@@ -1,4 +1,4 @@
-package com.yumtaufikhidayat.pitjarusx.ui.login
+package com.yumtaufikhidayat.pitjarusx.ui.login.fragment
 
 import android.os.Bundle
 import android.text.Editable
@@ -13,9 +13,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.yumtaufikhidayat.pitjarusx.R
-import com.yumtaufikhidayat.pitjarusx.data.NetworkResult
 import com.yumtaufikhidayat.pitjarusx.databinding.FragmentLoginBinding
-import com.yumtaufikhidayat.pitjarusx.model.local.LoginLocal
+import com.yumtaufikhidayat.pitjarusx.ui.login.viewmodel.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

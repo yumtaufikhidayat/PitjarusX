@@ -1,4 +1,4 @@
-package com.yumtaufikhidayat.pitjarusx.ui.login
+package com.yumtaufikhidayat.pitjarusx.ui.login.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

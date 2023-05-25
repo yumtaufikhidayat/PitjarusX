@@ -1,4 +1,4 @@
-package com.yumtaufikhidayat.pitjarusx.ui.main.ui
+package com.yumtaufikhidayat.pitjarusx.ui.main.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater

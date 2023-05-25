@@ -42,6 +42,7 @@ android {
         viewBinding true
         buildConfig true
     }
+    kapt.includeCompileClasspath = false
 }
 
 dependencies {
@@ -78,6 +79,7 @@ dependencies {
     def roomVersion = '2.5.1'
     implementation "androidx.room:room-runtime:$roomVersion"
     implementation "androidx.room:room-ktx:$roomVersion"
+    kapt "androidx.room:room-compiler:$roomVersion"
 
     // Coroutine
     def coroutineCoreVersion = '1.6.2'
@@ -90,7 +92,15 @@ dependencies {
     implementation "androidx.fragment:fragment-ktx:$androidKTXVersion"
 
     // Hilt
-    def hiltVersion = '2.46'
+    def hiltVersion = '2.44'
     implementation "com.google.dagger:hilt-android:$hiltVersion"
     kapt "com.google.dagger:hilt-compiler:$hiltVersion"
+
+    // Glide
+    def glideVersion = '4.15.1'
+    implementation "com.github.bumptech.glide:glide:$glideVersion"
+}
+
+kapt {
+    correctErrorTypes true
 }

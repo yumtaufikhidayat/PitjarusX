@@ -11,8 +11,11 @@ import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import com.yumtaufikhidayat.pitjarusx.R
 import com.yumtaufikhidayat.pitjarusx.data.NetworkResult
 import com.yumtaufikhidayat.pitjarusx.databinding.FragmentLoginBinding
+import com.yumtaufikhidayat.pitjarusx.model.local.LoginLocal
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -44,7 +47,11 @@ class LoginFragment : Fragment() {
                 val username = etUsername.text.toString().trim()
                 val password = etPassword.text.toString().trim()
 
-                loginViewModel.apply {
+                findNavController().apply {
+                    popBackStack(R.id.loginFragment, true)
+                    navigate(R.id.homeFragment)
+                }
+                /*loginViewModel.apply {
                     loginRemote(username, password).observe(viewLifecycleOwner) {
                         if (it != null) {
                             when (it) {
@@ -52,7 +59,11 @@ class LoginFragment : Fragment() {
                                 is NetworkResult.Success -> {
                                     showLoading(false)
                                     // save data to local after successfully login
-//                                    loginLocal(username, password)
+//                                    insertLogin(LoginLocal(username, password))
+                                    *//*findNavController().apply {
+                                        popBackStack(R.id.loginFragment, true)
+                                        navigate(R.id.homeFragment)
+                                    }*//*
                                     showToast(it.data.message)
                                 }
 
@@ -67,7 +78,7 @@ class LoginFragment : Fragment() {
                             }
                         }
                     }
-                }
+                }*/
             }
 
             etUsername.addTextChangedListener(textWatcher())

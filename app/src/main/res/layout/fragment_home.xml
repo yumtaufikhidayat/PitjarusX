@@ -1,10 +1,260 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.main.HomeFragment">
+    android:scrollbars="none"
+    android:overScrollMode="never"
+    tools:context=".ui.main.ui.HomeFragment">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/viewBgHome"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:background="@color/purple_500"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvMainMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:textColor="@color/white"
+            android:text="@string/txt_main_menu"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/imgRefresh"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgRefresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/outline_loading"
+            app:layout_constraintTop_toTopOf="@id/tvMainMenu"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imgProfile"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:adjustViewBounds="true"
+            android:src="@mipmap/ic_launcher"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Image.Top.PILL"
+            app:layout_constraintTop_toBottomOf="@id/viewBgHome"
+            app:layout_constraintBottom_toBottomOf="@id/viewBgHome"
+            app:layout_constraintStart_toStartOf="@id/viewBgHome"
+            app:layout_constraintEnd_toEndOf="@id/viewBgHome"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvProfileName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginHorizontal="16dp"
+            android:text="@string/txt_profile_name"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/imgProfile"
+            app:layout_constraintStart_toStartOf="@id/imgProfile"
+            app:layout_constraintEnd_toEndOf="@id/imgProfile"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvProfileRole"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/txt_profile_role"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/tvProfileName"
+            app:layout_constraintStart_toStartOf="@id/tvProfileName"
+            app:layout_constraintEnd_toEndOf="@id/tvProfileName"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvProfileNIK"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/txt_profile_nik"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/tvProfileRole"
+            app:layout_constraintStart_toStartOf="@id/tvProfileName"
+            app:layout_constraintEnd_toEndOf="@id/tvProfileName"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardVisiting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            app:layout_constraintTop_toBottomOf="@id/tvProfileNIK"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp"
+            app:cardUseCompatPadding="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvVisitingMonth"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="@string/txt_visiting_month"
+                    android:textAlignment="center"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent=".33"/>
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent=".66"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imgTotalStore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/baseline_info"
+                    app:layout_constraintTop_toBottomOf="@id/tvVisitingMonth"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvTotalStoreNumber"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:text="@string/txt_150"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    app:layout_constraintTop_toTopOf="@id/imgTotalStore"
+                    app:layout_constraintBottom_toBottomOf="@id/imgTotalStore"
+                    app:layout_constraintStart_toEndOf="@id/imgTotalStore"
+                    app:layout_constraintEnd_toEndOf="@id/guideline1"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvTotalStore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/txt_total_store"
+                    app:layout_constraintTop_toBottomOf="@id/tvTotalStoreNumber"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/guideline1"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imgActualStore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/baseline_check"
+                    app:layout_constraintTop_toTopOf="@id/imgTotalStore"
+                    app:layout_constraintStart_toStartOf="@id/guideline1"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvActualStoreNumber"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:text="@string/txt_150"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    app:layout_constraintTop_toTopOf="@id/imgActualStore"
+                    app:layout_constraintBottom_toBottomOf="@id/imgActualStore"
+                    app:layout_constraintStart_toEndOf="@id/imgActualStore"
+                    app:layout_constraintEnd_toEndOf="@id/guideline2"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvActualStore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/txt_actual_store"
+                    app:layout_constraintTop_toBottomOf="@id/tvActualStoreNumber"
+                    app:layout_constraintStart_toStartOf="@id/guideline1"
+                    app:layout_constraintEnd_toEndOf="@id/guideline2"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imgPercentage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/baseline_auto_graph"
+                    app:layout_constraintTop_toTopOf="@id/imgTotalStore"
+                    app:layout_constraintStart_toStartOf="@id/guideline2"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPercentageNumber"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:text="@string/txt_50_percent"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    app:layout_constraintTop_toTopOf="@id/imgPercentage"
+                    app:layout_constraintBottom_toBottomOf="@id/imgPercentage"
+                    app:layout_constraintStart_toEndOf="@id/imgPercentage"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPercentage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/txt_percentage"
+                    app:layout_constraintTop_toBottomOf="@id/tvPercentageNumber"
+                    app:layout_constraintStart_toStartOf="@id/guideline2"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/txt_menu"
+            android:textColor="@color/orange"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/cardVisiting"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvMenu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="16dp"
+            tools:listitem="@layout/item_menu"
+            tools:itemCount="4"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="4"
+            app:layout_constraintTop_toBottomOf="@id/tvMenu"
+            app:layout_constraintStart_toStartOf="@id/cardVisiting"
+            app:layout_constraintEnd_toEndOf="@id/cardVisiting"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

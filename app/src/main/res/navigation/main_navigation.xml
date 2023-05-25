@@ -10,4 +10,9 @@
         android:name="com.yumtaufikhidayat.pitjarusx.ui.login.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.yumtaufikhidayat.pitjarusx.ui.main.ui.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
 </navigation>

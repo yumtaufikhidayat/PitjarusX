@@ -9,7 +9,20 @@
     <string name="txt_username_ex">yourusernamehere</string>
     <string name="txt_password">Password</string>
     <string name="txt_show_password">Show password</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="txt_main_menu">Main Menu</string>
+    <string name="txt_profile_name">Mitha Khairunnisa</string>
+    <string name="txt_profile_role">Role: {…}</string>
+    <string name="txt_profile_nik">NIK: MD00001</string>
+    <string name="txt_visiting_month">Kunjungan pada bulan Agustus 2020</string>
+    <string name="txt_150">150</string>
+    <string name="txt_50_percent">50%</string>
+    <string name="txt_total_store">Total Store</string>
+    <string name="txt_actual_store">Actual Store</string>
+    <string name="txt_percentage">Percentage</string>
+    <string name="txt_menu">Menu</string>
+    <string name="txt_visiting">Kunjungan</string>
+    <string name="txt_target_install_cdfdpc">Target Install CDFDPC</string>
+    <string name="txt_dashboard">Dashboard</string>
+    <string name="txt_transmission_history">Transmission History</string>
+    <string name="txt_logout">Logout</string>
 </resources>

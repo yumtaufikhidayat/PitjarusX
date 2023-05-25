@@ -25,5 +25,5 @@ object DatabaseModule {
 
     @Singleton
     @Provides
-    fun provideDao(db: PitjarusXDatabase) = db.getLoginDao()
+    fun provideDao(db: PitjarusXDatabase) = db.getPitjarusXDao()
 }

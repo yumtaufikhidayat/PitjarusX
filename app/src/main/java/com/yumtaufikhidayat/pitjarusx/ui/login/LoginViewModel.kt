@@ -3,6 +3,7 @@ package com.yumtaufikhidayat.pitjarusx.ui.login
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.yumtaufikhidayat.pitjarusx.data.repository.PitjarusXRepository
+import com.yumtaufikhidayat.pitjarusx.model.local.LoginLocal
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -13,7 +14,7 @@ class LoginViewModel @Inject constructor(
 ) : ViewModel() {
     fun loginRemote(username: String, password: String) = repository.loginRemote(username, password)
 
-    fun loginLocal(username: String, password: String) = viewModelScope.launch {
-        repository.loginLocal(username, password)
+    fun insertLogin(loginLocal: LoginLocal) = viewModelScope.launch {
+        repository.insertLogin(loginLocal)
     }
 }

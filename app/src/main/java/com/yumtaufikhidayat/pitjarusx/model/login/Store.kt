@@ -1,10 +1,15 @@
 package com.yumtaufikhidayat.pitjarusx.model.login
 
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
+import com.yumtaufikhidayat.pitjarusx.utils.Common
 
+@Entity(tableName = Common.ENTITY_STORE)
 data class Store(
     @SerializedName("account_id")
+    @PrimaryKey(autoGenerate = false)
     val accountId: String = "", // 1
     @SerializedName("account_name")
     val accountName: String = "", // IDM DUMMY

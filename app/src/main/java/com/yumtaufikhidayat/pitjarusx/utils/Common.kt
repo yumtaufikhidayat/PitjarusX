@@ -1,7 +1,7 @@
 package com.yumtaufikhidayat.pitjarusx.utils
 
 object Common {
-    const val LOGIN = "login"
+    const val LOGIN = "sariroti_md/index.php/login/loginTest"
     const val DB_NAME = "pitjarusX.db"
     const val DB_VERSION = 1
     const val ENTITY_LOGIN_LOCAL = "tbl_login_local"

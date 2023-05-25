@@ -24,7 +24,7 @@ android {
 
     buildTypes {
         debug {
-            buildConfigField "String", "BASE_URL", "\"http://keraton.indward.com/api/sariroti_md/index.php/\""
+            buildConfigField "String", "BASE_URL", "\"http://keraton.indward.com/api/\""
         }
         release {
             minifyEnabled false

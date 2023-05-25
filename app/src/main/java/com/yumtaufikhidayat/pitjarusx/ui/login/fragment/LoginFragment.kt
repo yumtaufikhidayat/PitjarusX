@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.yumtaufikhidayat.pitjarusx.R
+import com.yumtaufikhidayat.pitjarusx.data.NetworkResult
 import com.yumtaufikhidayat.pitjarusx.databinding.FragmentLoginBinding
 import com.yumtaufikhidayat.pitjarusx.ui.login.viewmodel.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -43,27 +44,27 @@ class LoginFragment : Fragment() {
     private fun setLogin() {
         binding.apply {
             btnLogin.setOnClickListener {
-                val username = etUsername.text.toString().trim()
-                val password = etPassword.text.toString().trim()
+                val username = etUsername.text.toString()
+                val password = etPassword.text.toString()
 
-                findNavController().apply {
-                    popBackStack(R.id.loginFragment, true)
-                    navigate(R.id.homeFragment)
-                }
-                /*loginViewModel.apply {
+                loginViewModel.apply {
                     loginRemote(username, password).observe(viewLifecycleOwner) {
                         if (it != null) {
                             when (it) {
                                 is NetworkResult.Loading -> showLoading(true)
                                 is NetworkResult.Success -> {
                                     showLoading(false)
-                                    // save data to local after successfully login
-//                                    insertLogin(LoginLocal(username, password))
-                                    *//*findNavController().apply {
-                                        popBackStack(R.id.loginFragment, true)
-                                        navigate(R.id.homeFragment)
-                                    }*//*
-                                    showToast(it.data.message)
+                                    if (username == "pitjarus" && password == "admin") {
+                                        // save data to local after successfully login
+                                        insertLogin(it.data.stores)
+                                        findNavController().apply {
+                                            popBackStack(R.id.loginFragment, true)
+                                            navigate(R.id.homeFragment)
+                                        }
+                                        showToast("Selamat Datang!")
+                                    } else {
+                                        showToast(it.data.message)
+                                    }
                                 }
 
                                 is NetworkResult.Error -> {
@@ -77,7 +78,7 @@ class LoginFragment : Fragment() {
                             }
                         }
                     }
-                }*/
+                }
             }
 
             etUsername.addTextChangedListener(textWatcher())

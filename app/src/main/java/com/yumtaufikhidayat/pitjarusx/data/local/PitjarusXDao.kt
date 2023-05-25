@@ -5,7 +5,6 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.yumtaufikhidayat.pitjarusx.model.local.LoginLocal
 import com.yumtaufikhidayat.pitjarusx.model.login.Store
 import com.yumtaufikhidayat.pitjarusx.model.menu.MenuEntity
 import com.yumtaufikhidayat.pitjarusx.utils.Common
@@ -14,7 +13,7 @@ import com.yumtaufikhidayat.pitjarusx.utils.Common
 interface PitjarusXDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertLogin(loginLocal: LoginLocal)
+    suspend fun insertLogin(listStore: List<Store>)
 
     @Query("SELECT * FROM ${Common.ENTITY_STORE}")
     fun getLogin(): LiveData<List<Store>>

@@ -15,4 +15,9 @@
         android:name="com.yumtaufikhidayat.pitjarusx.ui.main.fragment.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/storeListFragment"
+        android:name="com.yumtaufikhidayat.pitjarusx.ui.store.storelist.fragment.StoreListFragment"
+        android:label="fragment_store_list"
+        tools:layout="@layout/fragment_store_list" />
 </navigation>

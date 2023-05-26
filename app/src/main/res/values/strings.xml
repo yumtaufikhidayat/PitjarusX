@@ -6,7 +6,6 @@
     <string name="txt_login_failed_password">Login gagal. Password yang digunakan salah/tidak terdaftar. Silakan coba lagi.</string>
     <string name="txt_login_success">Login berhasil. Silakan login untuk menikmati fitur-fitur JMO.</string>
     <string name="txt_username">Username</string>
-    <string name="txt_username_ex">yourusernamehere</string>
     <string name="txt_password">Password</string>
     <string name="txt_show_password">Show password</string>
     <string name="txt_main_menu">Main Menu</string>
@@ -25,6 +24,10 @@
     <string name="txt_dashboard">Dashboard</string>
     <string name="txt_transmission_history">Transmission History</string>
     <string name="txt_logout">Logout</string>
+    <string name="txt_list_store">List Store</string>
+    <string name="txt_search_store">Cari Toko/Distributor</string>
+    <string name="txt_visiting_list">List kunjungan 19-08-2020</string>
+    <string name="txt_1_m">1m</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

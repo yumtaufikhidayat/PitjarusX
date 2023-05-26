@@ -8,7 +8,7 @@
     tools:context=".ui.store.storelist.fragment.StoreListFragment">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+        android:id="@+id/toolbarListStore"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
@@ -34,18 +34,90 @@
                 app:layout_constraintStart_toStartOf="parent"/>
 
             <TextView
-                android:id="@+id/tvToolbar"
+                android:id="@+id/tvToolbarTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
+                android:layout_marginHorizontal="8dp"
                 android:textSize="18sp"
                 android:textColor="@color/black"
-                tools:text="@string/app_name"
+                android:text="@string/txt_list_store"
                 app:layout_constraintTop_toTopOf="@id/imgBackArrow"
-                app:layout_constraintStart_toEndOf="@id/imgBackArrow"/>
+                app:layout_constraintBottom_toTopOf="@id/tvToolbarSubtitle"
+                app:layout_constraintStart_toEndOf="@id/imgBackArrow"
+                app:layout_constraintEnd_toStartOf="@id/imgTransaction"/>
+
+            <TextView
+                android:id="@+id/tvToolbarSubtitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                tools:text="@string/app_name"
+                app:layout_constraintTop_toBottomOf="@id/tvToolbarTitle"
+                app:layout_constraintBottom_toBottomOf="@id/imgBackArrow"
+                app:layout_constraintStart_toStartOf="@id/tvToolbarTitle"
+                app:layout_constraintEnd_toEndOf="@id/tvToolbarTitle"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgTransaction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/outline_assessment"
+                app:layout_constraintTop_toTopOf="@id/imgBackArrow"
+                app:layout_constraintBottom_toBottomOf="@id/imgBackArrow"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="8dp"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.appcompat.widget.Toolbar>
+
+    <com.yumtaufikhidayat.pitjarusx.utils.MaterialCustomEditText
+        android:id="@+id/etSearch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginHorizontal="8dp"
+        android:background="@drawable/bg_edit_text_search"
+        android:drawableStart="@drawable/outline_search"
+        android:drawablePadding="8dp"
+        android:padding="8dp"
+        android:hint="@string/txt_search_store"
+        android:textColorHint="@color/grey_dark"
+        android:textSize="14sp"
+        android:inputType="text"
+        android:imeOptions="actionNext"
+        android:autofillHints="emailAddress"
+        android:nextFocusDown="@id/etPassword"
+        app:layout_constraintTop_toBottomOf="@id/toolbarListStore"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <fragment
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginTop="2dp"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        app:layout_constraintTop_toBottomOf="@id/etSearch" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvVisitingList"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/txt_visiting_list"
+        android:textColorHint="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/map"
+        app:layout_constraintStart_toStartOf="@id/etSearch"
+        app:layout_constraintEnd_toEndOf="@id/etSearch"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
+        tools:listitem="@layout/item_store_visiting_list"
+        app:layout_constraintTop_toBottomOf="@id/tvVisitingList"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -50,6 +50,7 @@
                 android:id="@+id/tvToolbarSubtitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:textSize="12sp"
                 android:textColor="@color/black"
                 tools:text="@string/app_name"
                 app:layout_constraintTop_toBottomOf="@id/tvToolbarTitle"
@@ -113,6 +114,7 @@
         app:layout_constraintEnd_toEndOf="@id/etSearch"/>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvStoreList"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="8dp"

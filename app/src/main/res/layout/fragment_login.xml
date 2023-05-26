@@ -27,7 +27,7 @@
         android:drawableStart="@drawable/ic_outline_person"
         android:drawablePadding="8dp"
         android:padding="8dp"
-        android:hint="@string/txt_username_ex"
+        android:hint="@string/txt_username"
         android:textSize="14sp"
         android:inputType="text"
         android:imeOptions="actionNext"

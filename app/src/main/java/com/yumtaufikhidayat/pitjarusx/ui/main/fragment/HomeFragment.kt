@@ -4,10 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import com.yumtaufikhidayat.pitjarusx.R
 import com.yumtaufikhidayat.pitjarusx.databinding.FragmentHomeBinding
 import com.yumtaufikhidayat.pitjarusx.ui.main.adapter.MenuAdapter
 import com.yumtaufikhidayat.pitjarusx.ui.main.viewmodel.HomeViewModel
@@ -20,6 +21,7 @@ class HomeFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val homeViewModel: HomeViewModel by viewModels()
+    private val menuAdapter by lazy { MenuAdapter(::navigateToStoreList) }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,12 +39,6 @@ class HomeFragment : Fragment() {
     }
 
     private fun showMenu() {
-        val menuAdapter = MenuAdapter {
-            when (it) {
-                0 -> Toast.makeText(requireContext(), "tes posisi $it", Toast.LENGTH_SHORT).show()
-            }
-        }
-
         binding.rvMenu.apply {
             layoutManager = GridLayoutManager(requireContext(), 4)
             adapter = menuAdapter
@@ -53,6 +49,12 @@ class HomeFragment : Fragment() {
             getMenu().observe(viewLifecycleOwner) {
                 menuAdapter.submitList(it)
             }
+        }
+    }
+
+    private fun navigateToStoreList(position: Int) {
+        when(position) {
+            0 -> findNavController().navigate(R.id.storeListFragment)
         }
     }
 

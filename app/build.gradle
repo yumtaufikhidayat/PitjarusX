@@ -6,6 +6,7 @@ plugins {
     id 'kotlin-kapt'
     id 'androidx.navigation.safeargs'
     id 'dagger.hilt.android.plugin'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 }
 
 android {
@@ -96,9 +97,10 @@ dependencies {
     implementation "com.google.dagger:hilt-android:$hiltVersion"
     kapt "com.google.dagger:hilt-compiler:$hiltVersion"
 
-    // Glide
-    def glideVersion = '4.15.1'
-    implementation "com.github.bumptech.glide:glide:$glideVersion"
+    def mapsVersion = "18.0.0"
+    implementation "com.google.android.gms:play-services-maps:$mapsVersion"
+    implementation "com.google.android.gms:play-services-location:$mapsVersion"
+
 }
 
 kapt {

@@ -8,7 +8,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.annotation.ColorInt
 import androidx.annotation.DrawableRes
 import androidx.core.content.res.ResourcesCompat
@@ -136,7 +135,7 @@ class StoreListFragment : Fragment(), OnMapReadyCallback {
     }
 
     private fun navigateToDetailStore() {
-        Toast.makeText(requireContext(), "Go to detail store", Toast.LENGTH_SHORT).show()
+        findNavController().navigate(R.id.storeDetailFragment)
     }
 
     private fun vectorToBitmap(@DrawableRes id: Int, @ColorInt color: Int): BitmapDescriptor {
